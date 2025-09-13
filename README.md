@@ -1,4 +1,4 @@
-# 🎬 Assignment: Bringing Web Pages to Life with CSS & JavaScript
+# 🎬 Assignment: Bringing Web Pages to Life with CSS & JavaScript by elijah
 
 In this assignment, you’ll create a visually dynamic and interactive experience by combining the beauty of **CSS3 animations** with the logic and power of **JavaScript functions**. By the end, you’ll have a mini interactive experience that not only looks good—but *feels* responsive and alive!
 

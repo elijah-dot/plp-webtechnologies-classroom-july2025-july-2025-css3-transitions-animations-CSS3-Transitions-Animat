@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f0f4f8;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Part 1: CSS3 Transitions and Animations */
+
+/* Button hover effect with smooth color and scale transition */
+.btn-hover {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-hover:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Fade and slide in box */
+.fade-slide-box {
+  width: 200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffc107;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeSlideIn 2s forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Continuous spinning box */
+.continuous-spin-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: #28a745;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Part 3: Combining CSS Animations with JavaScript */
+
+/* Box to animate on button click */
+#animateBox {
+  width: 150px;
+  height: 150px;
+  background: #17a2b8;
+  margin: 20px auto;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: transform 0.5s ease;
+}
+
+/* Animation triggered by JS */
+.animate-scale {
+  animation: scaleUpDown 1s forwards;
+}
+
+@keyframes scaleUpDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+/* Card flip animation */
+.card {
+  width: 200px;
+  height: 120px;
+  perspective: 1000px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.card-front {
+  background: #6f42c1;
+}
+
+.card-back {
+  background: #e83e8c;
+  transform: rotateY(180deg);
+}
+
+/* Loading spinner */
+.spinner {
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ddd;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  display: none; /* Hidden by default */
+}
+
+.spinner.loading {
+  display: block;
+  animation: spin 1s linear infinite;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  position: relative;
+  min-width: 300px;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
